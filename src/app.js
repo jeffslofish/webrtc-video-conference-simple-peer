@@ -19,7 +19,7 @@ const port = process.env.PORT || 3012
 
 require('./routes')(app)
 
-const httpsServer = httpolyglot.createServer(app)
+const httpsServer = httpolyglot.createServer({}, app)
 const io = require('socket.io')(httpsServer)
 require('./socketController')(io)
 
